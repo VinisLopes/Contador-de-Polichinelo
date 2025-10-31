@@ -28,15 +28,38 @@ def handle_mouse_click_ranking(event, x, y, flags, param):
 def show_confirmation_screen(window_title, message):
     """Mostra uma tela de confirmação e aguarda a resposta do usuário (S/N)."""
     confirm_window_name = f"Confirmar - {window_title}"
+    
+    # --- CORREÇÃO: Lógica para quebrar a linha da mensagem ---
+    lines = []
+    if message == "Tem certeza que deseja excluir esta entrada do ranking?":
+        lines.append("Tem certeza que deseja excluir")
+        lines.append("esta entrada do ranking?")
+    else:
+        # Caso seja outra mensagem, apenas adiciona
+        lines.append(message) 
+
+    # Define a altura da tela dinamicamente
+    base_height = 300
+    if len(lines) > 1:
+        base_height = 320 # Aumenta a altura se tiver mais de 1 linha
+    
     while True:
-        tela = np.ones((300, 700, 3), dtype=np.uint8) * 24
+        tela = np.ones((base_height, 700, 3), dtype=np.uint8) * 24
         draw_filled_transparent_rect(tela, (0, 0), (700, 80), (80, 40, 40), 0.9)
         putText_outline(tela, "CONFIRMACAO", (40, 55), cv2.FONT_HERSHEY_DUPLEX, 1.0, (255, 100, 100), 2)
         
-        putText_outline(tela, message, (40, 130), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (230, 230, 230), 2)
+        # --- CORREÇÃO: Desenha as linhas ---
+        y_text = 130
+        for line in lines:
+            putText_outline(tela, line, (40, y_text), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (230, 230, 230), 2)
+            y_text += 35 # Incrementa o Y para a próxima linha
         
-        draw_button(tela, (100, 180, 300, 230), (0, 180, 0), "[S] Sim", label_color=(20, 22, 25))
-        draw_button(tela, (400, 180, 600, 230), (200, 50, 50), "[N] Nao", label_color=(255, 255, 255))
+        # --- CORREÇÃO: Ajusta a posição Y dos botões ---
+        y_buttons = y_text + 10 # Coloca os botões abaixo do texto
+        
+        draw_button(tela, (100, y_buttons, 300, y_buttons + 50), (0, 180, 0), "[S] Sim", label_color=(20, 22, 25))
+        draw_button(tela, (400, y_buttons, 600, y_buttons + 50), (200, 50, 50), "[N] Nao", label_color=(255, 255, 255))
+        # --- FIM DA CORREÇÃO ---
 
         show_fullscreen(confirm_window_name, tela)
         
