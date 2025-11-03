@@ -20,6 +20,16 @@
         "data_hora": "03/11/2025 19:42:04"
     },
     {
+        "id": 1762211917.7556312,
+        "nome": "Vinicius",
+        "pontuacao": 950,
+        "movimentos_totais": 10,
+        "movimentos_corretos": 10,
+        "tempo_total_segundos": 26.478559017181396,
+        "taxa_acerto": 100.0,
+        "data_hora": "03/11/2025 20:18:37"
+    },
+    {
         "id": 1762210035.0692167,
         "nome": "lucas",
         "pontuacao": 0,

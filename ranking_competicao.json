@@ -1,5 +1,17 @@
 [
     {
+        "id": 1762212095.787851,
+        "nome_vencedor": "Vinicius",
+        "pontuacao_vencedor": 10,
+        "nome_perdedor": "Lucas",
+        "pontuacao_perdedor": 6,
+        "pontuacao_jogador1": 10,
+        "pontuacao_jogador2": 6,
+        "tempo_total_segundos": 90,
+        "diferenca": 4,
+        "data_hora": "03/11/2025 20:21:35"
+    },
+    {
         "id": 1762209832.9544091,
         "nome_vencedor": "vini",
         "pontuacao_vencedor": 10,
