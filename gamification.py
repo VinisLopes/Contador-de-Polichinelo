@@ -47,7 +47,7 @@ class GamificationSystem:
         
         # Lógica de nota e descrição (baseada na taxa de acerto e meta)
         if self.taxa_acerto >= 90 and self.movimentos_corretos >= self.meta_polichinelos:
-            nota = "A+"; descricao = "Performance Impecável"
+            nota = "A+"; descricao = "Impecavel"
         elif self.taxa_acerto >= 80 and self.movimentos_corretos >= self.meta_polichinelos:
             nota = "A"; descricao = "Excelente"
         elif self.taxa_acerto >= 70 and self.movimentos_corretos >= self.meta_polichinelos:

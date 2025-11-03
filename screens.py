@@ -346,7 +346,7 @@ def escolher_meta():
 def escolher_video():
     """Abre a caixa de diálogo para selecionar um arquivo de vídeo."""
     Tk().withdraw()
-    video_path = filedialog.askopenfilename(title="Selecione o vídeo para análise", filetypes=[("MP4 files", "*.mp4"), ("All files", "*.*")])
+    video_path = filedialog.askopenfilename(title="Selecione o vídeo para analise", filetypes=[("MP4 files", "*.mp4"), ("All files", "*.*")])
     return video_path
 
 # ============================================================================
@@ -370,9 +370,9 @@ def mostrar_resultado_competicao(competition, counter1, counter2):
     pontuacao1, pontuacao2 = counter1 * 50, counter2 * 50
     status1, status2 = "EM ANDAMENTO", "EM ANDAMENTO"
     if competition.vencedor == 1:
-        pontuacao1 += 200; status1, status2 = "VENCEDOR", "2° LUGAR"
+        pontuacao1 += 200; status1, status2 = "VENCEDOR", "2 LUGAR"
     elif competition.vencedor == 2:
-        pontuacao2 += 200; status1, status2 = "2° LUGAR", "VENCEDOR"
+        pontuacao2 += 200; status1, status2 = "2 LUGAR", "VENCEDOR"
 
     velocidade1 = (counter1 / tempo_total * 60) if tempo_total > 0 else 0
     velocidade2 = (counter2 / tempo_total * 60) if tempo_total > 0 else 0
