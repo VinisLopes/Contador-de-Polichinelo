@@ -6,7 +6,7 @@ from screens import escolher_modo, show_solo_ranking, show_competicao_ranking, o
 from pose_processor import validar_pose_melhorada, detectar_postura_polichinelo_solo, detectar_multiplas_pessoas_corrigido, detectar_postura_polichinelo_competicao
 from gamification import GamificationSystem, CompetitionSystem
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     mp_drawing = mp.solutions.drawing_utils
     mp_pose = mp.solutions.pose
     
